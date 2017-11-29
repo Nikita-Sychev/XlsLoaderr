@@ -34,6 +34,7 @@ namespace XlsLoader.Services
             return true;
         }
 
+        //отправка данных в БД
         public bool LoadExcelTitleWorkOrder(TitleDrill model)
         {
             var p0 = new SqlParam() { Name = "p_work_order_id", Val = model.WorkOrderId, ValType = DataType.Integer, Direction = ParameterDirection.Input };

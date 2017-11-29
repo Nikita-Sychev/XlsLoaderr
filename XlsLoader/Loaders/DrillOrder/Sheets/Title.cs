@@ -21,7 +21,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             _sideTab1Mapp = PrepareTab1SideMapping();
         }
 
-        //получить список имен скважин/листов excel для зугрузки данных
+        /// <summary>
+        /// получить список имен листов excel для зугрузки данных
+        /// </summary>
+        /// <returns></returns>
         public List<string> GetSheetNamesForLoad(XlsSheet titleSheet, out List<string> someNames)
         {
             const string tabName = "тэхнико-экономические показатели строительства по проекту:";
@@ -64,6 +67,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             return result;
         }
 
+        /// <summary>
+        /// Основной метод чтения и компановки двнных с листа Excel
+        /// </summary>
+        /// <returns></returns>
         public TitleDrill PrepareLoadData(XlsSheet sheet)
         {
             const string tab3EndWord = "Среднее по ННС";
@@ -117,6 +124,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             };
         }
 
+        /// <summary>
+        /// компановка данных Шапка листа
+        /// </summary>
+        /// <returns></returns>
         private List<CellWorkOrder> GetTab1Data(XlsRow row)
         {
             var result = new List<CellWorkOrder>();
@@ -149,6 +160,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             return date.Length > 0 ? "5" + date[0] : string.Empty;
         }
 
+        /// <summary>
+        /// компановка данных Ответственные специалисты по проекту 
+        /// </summary>
+        /// <returns></returns>
         private List<CellWorkOrder> GetTab2Data(XlsRow row)
         {
             var result = new List<CellWorkOrder>(3);
@@ -168,6 +183,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             return result;
         }
 
+        /// <summary>
+        /// компановка данных Тэхнико-экономические показатели строительства по проекту
+        /// </summary>
+        /// <returns></returns>
         private List<CellWorkOrder> GetTable3Data(XlsRow row)
         {
             var result = new List<CellWorkOrder>();
@@ -202,6 +221,10 @@ namespace XlsLoader.Loaders.DrillOrder.Sheets
             return result;
         }
 
+        /// <summary>
+        /// компановка данных Описание и особенности проекта
+        /// </summary>
+        /// <returns></returns>
         private List<CellWorkOrder> GetTab4Data(int startSearchRow, List<XlsRow> rows)
         {
             var result = new List<CellWorkOrder>();
