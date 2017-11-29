@@ -286,3 +286,8 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/lib/SqlWork.dll
+/lib/Oracle.DataAccess.dll
+/lib/CoreWebApi.dll
+/lib/Contracts.dll
+/lib/Configuration.dll
